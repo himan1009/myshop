@@ -4,8 +4,10 @@ const mongoose = require('mongoose');
 const ImageSchema = new mongoose.Schema({
   url: String,
   alt: String,
-  order: Number
+  order: Number,
+  public_id: String, // ✅ store Cloudinary public_id for deletion
 }, { _id: false });
+
 
 const ProductSchema = new mongoose.Schema({
   name: { type: String, required: true },

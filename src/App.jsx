@@ -22,10 +22,11 @@ export default function App() {
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-8 text-gray-600 font-medium">
-            <a href="#home" className="hover:text-indigo-600 transition">Home</a>
-            <a href="#featured" className="hover:text-indigo-600 transition">Featured</a>
-            <a href="#about" className="hover:text-indigo-600 transition">About</a>
-            <a href="#contact" className="hover:text-indigo-600 transition">Contact</a>
+            <a href="/#home" className="hover:text-indigo-600 transition">Home</a>
+            <a href="/#featured" className="hover:text-indigo-600 transition">Featured</a>
+            <a href="/#about" className="hover:text-indigo-600 transition">About</a>
+            <a href="/#contact" className="hover:text-indigo-600 transition">Contact</a>
+
           </nav>
 
           {/* Admin Button */}
