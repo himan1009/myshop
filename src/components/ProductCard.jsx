@@ -9,30 +9,30 @@ export default function ProductCard({ product }) {
   const discountedPrice = Math.round(price * (1 - discount / 100));
 
   return (
-    <div className="bg-white border rounded-lg shadow-sm hover:shadow-md transition flex flex-col">
+    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-gray-100">
       <Link to={`/product/${product._id}`}>
-        {/* ✅ Fixed 4:3 ratio using height */}
-        <div className="w-full" style={{ aspectRatio: "4 / 3" }}>
+        <div className="relative">
           <img
             src={firstImage}
             alt={product.name}
-            className="w-full h-40 object-cover"
+            className="w-full aspect-[4/3] object-cover rounded-t-2xl"
           />
+          {discount > 0 && (
+            <span className="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow">
+              {discount}% OFF
+            </span>
+          )}
         </div>
 
-        <div className="p-4 flex flex-col flex-grow">
-          {/* Product Name */}
+        <div className="p-4 space-y-2">
           <h3 className="font-semibold text-lg text-gray-800 truncate">
             {product.name}
           </h3>
-
-          {/* Short description */}
-          <p className="text-sm text-gray-500 line-clamp-2 flex-grow">
+          <p className="text-sm text-gray-500 line-clamp-2">
             {product.shortDescription}
           </p>
 
-          {/* Price / Discount */}
-          <div className="mt-3">
+          <div className="flex items-center justify-between mt-2">
             {discount > 0 ? (
               <div>
                 <span className="font-bold text-xl text-green-600">
@@ -41,13 +41,14 @@ export default function ProductCard({ product }) {
                 <span className="text-sm text-gray-400 line-through ml-2">
                   ₹{price}
                 </span>
-                <span className="ml-2 text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full">
-                  {discount}% OFF
-                </span>
               </div>
             ) : (
               <span className="font-bold text-xl text-indigo-600">₹{price}</span>
             )}
+
+            <button className="bg-indigo-600 text-white text-sm px-3 py-1.5 rounded-full hover:bg-indigo-700 transition">
+              View
+            </button>
           </div>
         </div>
       </Link>
