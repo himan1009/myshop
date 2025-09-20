@@ -54,13 +54,12 @@ export default function HomePage() {
         className="bg-gray-50 rounded-3xl p-10 shadow-inner text-center"
       >
         <h2 className="text-3xl font-bold text-gray-800 mb-6">About Us</h2>
-        <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          At <span className="font-semibold text-indigo-600">My Shop</span>, we
-          believe shopping should be simple, stylish, and stress-free. We curate
-          products with a focus on quality, design, and affordability. Whether
-          you’re looking for everyday essentials or unique finds, our collection
-          has something just for you.
-        </p>
+        <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+  At <span class="font-semibold text-indigo-600">My Shop</span>, tired of waiting for a full grocery order? We believe a single craving shouldn't require a minimum spend or a long wait.
+  <br />
+  <br />
+  <span class="font-bold text-gray-800">My Shop delivers exactly what you need, in 2 minutes flat.</span> No more waiting for a delivery slot—just the fastest way to get your essentials, right here in the PG.
+</p>
       </section>
 
       {/* 📞 Contact Section */}
