@@ -27,7 +27,7 @@ yarn-error.log*
 Thumbs.db
 
 # Uploads (local storage only, don't push to GitHub)
-uploads/
+# uploads/
 
 # IDE/editor stuff
 .vscode/
