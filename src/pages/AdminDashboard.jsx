@@ -511,11 +511,12 @@ export default function AdminDashboard() {
             </div>
 
             {/* Add Product Form */}
+            {/* Add Product Form */}
             <form
                 onSubmit={handleSubmit}
-                className="bg-white shadow-xl p-8 rounded-xl mb-12 border border-gray-100"
+                className="bg-white shadow-xl p-6 sm:p-8 rounded-xl mb-12 border border-gray-100"
             >
-                <h3 className="text-lg font-bold text-gray-800 mb-6">
+                <h3 className="text-lg font-bold text-gray-800 mb-6 text-center sm:text-left">
                     ➕ Add New Product
                 </h3>
 
@@ -525,7 +526,7 @@ export default function AdminDashboard() {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="Product Name"
-                        className="p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500"
+                        className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500"
                         required
                     />
                     <input
@@ -533,22 +534,25 @@ export default function AdminDashboard() {
                         value={form.shortDescription}
                         onChange={handleChange}
                         placeholder="Short Description"
-                        className="p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500"
+                        className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500"
                     />
+
                     <textarea
                         name="longDescription"
                         value={form.longDescription}
                         onChange={handleChange}
                         placeholder="Long Description"
-                        className="p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 md:col-span-2"
+                        rows={4}
+                        className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 md:col-span-2"
                     />
+
                     <input
                         name="price"
                         type="number"
                         value={form.price}
                         onChange={handleChange}
                         placeholder="Price"
-                        className="p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500"
+                        className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500"
                         required
                     />
                     <input
@@ -557,7 +561,7 @@ export default function AdminDashboard() {
                         value={form.discountPercent}
                         onChange={handleChange}
                         placeholder="Discount %"
-                        className="p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500"
+                        className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500"
                     />
                     <input
                         name="stock"
@@ -565,33 +569,37 @@ export default function AdminDashboard() {
                         value={form.stock}
                         onChange={handleChange}
                         placeholder="Stock"
-                        className="p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500"
+                        className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500"
                     />
-                    <input
-                        name="images"
-                        type="file"
-                        multiple
-                        onChange={handleChange}
-                        className="col-span-2"
-                    />
+
+                    {/* File upload - styled */}
+                    <label className="md:col-span-2 block">
+                        <span className="block text-sm font-medium text-gray-600 mb-1">Product Images</span>
+                        <input
+                            name="images"
+                            type="file"
+                            multiple
+                            onChange={handleChange}
+                            className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4
+                   file:rounded-full file:border-0
+                   file:text-sm file:font-semibold
+                   file:bg-indigo-50 file:text-indigo-600
+                   hover:file:bg-indigo-100"
+                        />
+                    </label>
                 </div>
 
                 <button
                     type="submit"
-                    disabled={adding}
-                    className="mt-6 w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:opacity-90 transition flex items-center justify-center gap-2"
+                    className="mt-6 w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 
+               text-white font-semibold rounded-lg shadow-lg hover:opacity-90 transition"
                 >
-                    {adding ? (
-                        <>
-                            <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                            Adding...
-                        </>
-                    ) : (
-                        "Add Product"
-                    )}
+                    Add Product
                 </button>
-
             </form>
+
+
+
 
             {/* Product List */}
             <div>
